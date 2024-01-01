@@ -1,18 +1,9 @@
-<p align="center">
-  <img src="./figures/SSA_title.png" alt="SSA Icon"/>
-</p>
-
-### [Official repo](https://github.com/fudan-zvg/Semantic-Segment-Anything), [Web Demo](https://replicate.com/cjwbw/semantic-segment-anything)
-> **[Semantic Segment Anything](https://github.com/fudan-zvg/Semantic-Segment-Anything)**  
-> Jiaqi Chen, Zeyu Yang, and Li Zhang  
-> Zhang Vision Group, Fudan Univerisity
-
+# Semantic Segment Anything
 SAM is a powerful model for arbitrary object segmentation, while SA-1B is the largest segmentation dataset to date. However, SAM lacks the ability to predict semantic categories for each mask. 
 (I) To address above limitation, we propose a pipeline on top of SAM to predict semantic category for each mask, called **_Semantic Segment Anything (SSA)_**.
 (II) Moreover, our SSA can serve as an automated dense open-vocabulary annotation engine called **_Semantic segment anything labeling engine (SSA-engine)_**, providing rich semantic category annotations for SA-1B or any other dataset. This engine significantly reduces the need for manual annotation and associated costs.
 ![](./figures/SSA_motivation.png)
-### Web demo and API
-- Try the Web Demo and API here: [![Replicate](https://replicate.com/cjwbw/semantic-segment-anything/badge)](https://replicate.com/cjwbw/semantic-segment-anything) 
+
 
 ### 🤔 Why do we need SSA project?
 - SAM is a highly generalizable object segmentation algorithm that can provide precise masks. SA-1B is the largest image segmentation dataset to date, providing fine mask segmentation annotations. Neither SAM nor SA-1B provide category predictions or annotations for each mask. This makes it difficult for researchers to use the powerful SAM algorithm to directly solve semantic segmentation tasks or to utilize SA-1B to train their own models.
@@ -93,13 +84,6 @@ The results show that when the accuracy of original Semantic branch is **NOT ver
 | SSA   | [Segformer-B5](https://huggingface.co/nvidia/segformer-b5-finetuned-cityscapes-1024-1024) | 71.67                   | 72.99              |
 
 Note that all Segformer checkpoint and data pipeline are sourced from [Hugging Face](https://huggingface.co/nvidia) released by NVIDIA, which shows lower mIoU compared to those on [official repository](https://github.com/NVlabs/SegFormer).
-### 4. Cross-domain segmentation on Foggy Driving
-We also evaluate the performance of SSA on the Foggy Driving dataset, with OneFormer as Semantic branch. 
-The weight and data pipeline of OneFormer is sourced from [Hugging Face](https://huggingface.co/shi-labs/oneformer_cityscapes_swin_large).
-
-| Model   | Training dataset | validation dataset | mIoU |
-|:-------|:-----------------|:-------------------|:------|
-| SSA   | Cityscapes       | Foggy Driving      | 55.61 |
 
 
 ## Examples
@@ -298,12 +282,13 @@ Exploring better ways to utilize SAM is worth further investigation.
 - [CLIPSeg](https://arxiv.org/abs/2112.10003), [Segformer](https://arxiv.org/abs/2105.15203), [OneFormer](https://arxiv.org/abs/2211.06220), [BLIP](https://arxiv.org/abs/2201.12086) and [CLIP](https://arxiv.org/abs/2103.00020) provide powerful semantic segmentation, image caption and classification models.
 
 ## 📜 Citation
-If you find this work useful for your research, please cite our github repo:
-```bibtex
+This work is built on the github repo/research project:
 @misc{chen2023semantic,
     title = {Semantic Segment Anything},
     author = {Chen, Jiaqi and Yang, Zeyu and Zhang, Li},
     howpublished = {\url{https://github.com/fudan-zvg/Semantic-Segment-Anything}},
     year = {2023}
 }
-```
+
+If you find this work useful, please cite this repo and the above mentioned research project.
+
